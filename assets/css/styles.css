@@ -1,9 +1,6 @@
-/* =========================
-   INTRO
-========================= */
-
 .intro-content {
     position: relative;
+    /* top: -8rem; */
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: var(--gap);
@@ -29,22 +26,16 @@
     height: auto;
 }
 
-/* =========================
-   TOP 3
-========================= */
 
 .top3-content {
     max-width: 64rem;
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
     min-height: 100vh;
     text-align: center;
 }
-
-/* =========================
-   GRID
-========================= */
 
 .grid-one-content {
     display: flex;
@@ -61,10 +52,9 @@
     padding-bottom: 5rem;
 }
 
-/* Grid fluido */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--gap);
     counter-reset: grid-counter;
 }
@@ -87,10 +77,6 @@
     transform: rotate(5deg);
 }
 
-/* =========================
-   GALERIA
-========================= */
-
 .gallery-img {
     width: 100%;
     max-width: 36rem;
@@ -99,18 +85,12 @@
 }
 
 .gallery-img img {
-    width: 100%;
-    height: auto;
     transition: all 300ms ease-in-out;
 }
 
 .gallery-img img:hover {
     transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
 }
-
-/* =========================
-   FORMULÁRIO
-========================= */
 
 .contact-form {
     grid-column: span 2;
@@ -119,6 +99,7 @@
 .contact-form .form-grid {
     border: none;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: var(--gap);
 }
@@ -172,10 +153,6 @@
     color: var(--light-gray-color);
 }
 
-/* =========================
-   FOOTER
-========================= */
-
 .footer {
     text-align: center;
     font-size: 1.6rem;
@@ -193,10 +170,6 @@
     margin: 0;
     padding: 3rem;
 }
-
-/* =========================
-   BOTÕES FIXOS
-========================= */
 
 .close-menu {
     display: none;
@@ -218,37 +191,28 @@
     border: 0.1rem solid var(--primary-color);
 }
 
-/* =========================
-   RESPONSIVIDADE
-========================= */
-
 @media (max-width: 800px) {
 
-    /* Remove 100vh no mobile */
     .intro-content,
-    .top3-content,
-    .grid-one-content {
-        min-height: auto;
-        padding: 4rem 2rem;
-    }
-
-    .intro-content {
+    .grid {
         grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .intro-text-content,
-    .intro-img {
-        align-items: center;
     }
 
     .gallery-img {
+        width: 100%;
         max-width: 100%;
-        max-height: none;
+        max-height: 100%;
+    }
+
+    .gallery-img img {
+        width: 100%;
+    }
+
+    .grid-one-content {
+        display: block;
     }
 
     .menu {
-        display: none;
         bottom: 0;
         text-align: center;
     }
@@ -263,6 +227,11 @@
         height: 100vh;
     }
 
+
+    .menu {
+        display: none;
+    }
+
     .close-menu-label::after {
         content: '☰';
         position: fixed;
@@ -272,6 +241,7 @@
         background: var(--primary-color);
         color: var(--white-color);
         font-size: 3rem;
+        line-height: 3rem;
         width: 3rem;
         height: 3rem;
         text-align: center;
@@ -291,7 +261,6 @@
         display: none;
     }
 
-    /* Tipografia menor */
     h1 {
         font-size: 4rem;
     }
@@ -314,38 +283,5 @@
 
     h6 {
         font-size: 2.8rem;
-    }
-}
-
-/* =========================
-   EXTRA SMALL DEVICES
-========================= */
-
-@media (max-width: 600px) {
-
-    .grid h3 {
-        font-size: 2.4rem;
-        padding-left: 3rem;
-    }
-
-    .grid h3::before {
-        font-size: 5rem;
-        top: -2rem;
-        left: -1rem;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        font-size: 1.6rem;
-        padding: 1.2rem 1.5rem;
-    }
-
-    .form-group button {
-        font-size: 1.8rem;
-        width: 100%;
-    }
-
-    .contact-form {
-        grid-column: span 1;
     }
 }
