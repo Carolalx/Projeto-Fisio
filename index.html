@@ -16,35 +16,39 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 
     <link rel="mask-icon" type="image/x-icon" href="assets/img/logo.jpg" color="#111">
+</head>
 
 <body>
+    <!-- CHECKBOX PARA MENU MOBILE -->
+    <input type="checkbox" id="close-menu" class="close-menu">
 
-    <input id="close-menu" class="close-menu" type="checkbox" aria-label="Close menu" role="button">
-    <label class="close-menu-label" for="close-menu" title="close menu"></label>
+    <!-- BOTÃO HAMBURGER -->
+    <label class="close-menu-label" for="close-menu" title="Menu"></label>
+
+    <!-- MENU LATERAL / TOP -->
     <aside class="menu white-bg">
-        <div class="main-content menu-content">
+        <div class="header-fixed">
             <div class="logo-img">
                 <img src="assets/img/logo.jpg" alt="Logo pessoal.">
             </div>
-            <h1 onclick="getElementById('close-menu').checked = false;">
+            <h1 onclick="document.getElementById('close-menu').checked=false;">
                 <a href="#home">Bárbara F.</a>
             </h1>
-
-            <nav>
-                <ul onclick="getElementById('close-menu').checked = false;">
-                    <li><a href="#intro">Especialidade</a></li>
-                    <li><a href="#grid-one">Outras especialidades</a></li>
-                    <li><a href="#gallery">Galeria de imagens</a></li>
-                    <li><a href="#grid-two">Mais sobre</a></li>
-                    <!-- <li><a href="#pricing">Preços</a></li> -->
-                    <!-- <li><a href="#contact">Contatos</a></li> -->
-                </ul>
-            </nav>
         </div>
+
+        <nav>
+            <ul onclick="document.getElementById('close-menu').checked=false;">
+                <li><a href="#intro">Especialidade</a></li>
+                <li><a href="#grid-one">Outras especialidades</a></li>
+                <li><a href="#gallery">Galeria de imagens</a></li>
+                <li><a href="#grid-two">Mais sobre</a></li>
+            </ul>
+        </nav>
     </aside>
 
     <div class="menu-spacing"></div>
 
+    <!-- INÍCIO DAS SEÇÕES -->
     <section id="home" class="intro main-bg section">
         <div class="main-content intro-content">
             <div class="intro-text-content">
@@ -52,7 +56,7 @@
                 <p>Minha atuação como fisioterapeuta é focada, principalmente, na saúde respiratória dos bebês,
                     mas minha formação me permite cuidar do desenvolvimento integral das crianças em diversas outras
                     frentes.</p>
-                <p>Meu Foco Principal: Fisioterapia Respiratória em Bebês</p>
+
                 <p> Eu me especializei no tratamento de doenças respiratórias em crianças pequenas. Utilizo abordagens
                     específicas, muitas vezes lúdicas, para prevenir e tratar quadros comuns como bronquiolite, asma e
                     pneumonia.
@@ -88,16 +92,13 @@
                 - Acelerar a recuperação
 
             </p>
-            <p></p>
         </div>
     </section>
-
 
     <section id="grid-one" class="grid-one main-bg section">
         <div class="main-content grid-one-content">
             <h2 class="grid-main-heading">Outros atendimentos
                 <p class="grid-description">Demais especialidades</p>
-
                 <div class="grid">
                     <article>
                         <h3>Fisioterapia Respiratória</h3>
@@ -143,8 +144,6 @@
         </div>
     </section>
 
-
-
     <section id="grid-two" class="grid-one main-bg section">
         <div class="main-content grid-one-content">
             <h2 class="grid-main-heading"></h2>
@@ -174,110 +173,7 @@
         </div>
     </section>
 
-    <!-- <section id="pricing" class="white-bg section">
-        <div class="main-content top3-content">
-            <h2>Preços</h2>
-            <p>Depende daquilo que você espera =D.</p>
-            <p>Fique sabendo que somos os melhores.</p> -->
-
-    <!-- <div class="responsive-table">
-                <table>
-                    <caption>Pricing table</caption>
-
-                    <thead>
-                        <tr>
-                            <th>Title 1</th>
-                            <th>Title 2</th>
-                            <th>Title 3</th>
-                            <th>Title 4</th>
-                            <th>Title 5</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>Content 1</td>
-                            <td>Content 2</td>
-                            <td>Content 3</td>
-                            <td>Content 3</td>
-                            <td>Content 3</td>
-                        </tr>
-                        <tr>
-                            <td>Content 1</td>
-                            <td>Content 2</td>
-                            <td>Content 3</td>
-                            <td>Content 3</td>
-                            <td>Content 3</td>
-                        </tr>
-                        <tr>
-                            <td>Content 1</td>
-                            <td>Content 2</td>
-                            <td>Content 3</td>
-                            <td>Content 3</td>
-                            <td>Content 3</td>
-                        </tr>
-                    </tbody>
-
-                    <tfoot>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Testando</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div> -->
-    <!-- </div>
-    </section> -->
-
-    <!-- <section id="contact" class="intro main-bg section">
-        <div class="main-content intro-content">
-            <div class="intro-text-content">
-                <h2>Janeiro de 2026</h2>
-                <p>Aquilo que parecia impossivel, aquilo que parecia não ter saída,
-                    Aquilo que parecia ser minha morte..Mas Jesus mudou minha sorte!
-                    Sou um milagre, ESTOU AQUI!
-                </p>
-            </div>
-            <div class="intro-img">
-                <img src="assets/img/fisio1.jpg" alt="Logo de Fisio.">
-            </div>
-
-            <div class="contact-form">
-                <fieldset class="form-grid">
-                    <legend>Entre em contato</legend>
-
-                    <div class="form-group">
-                        <label for="first-name">Nome</label>
-                        <input type="text" name="first-name" id="first-name" placeholder="Seu nome">
-
-                        <div class="form-group">
-                            <label for="last-name">Sobrenome</label>
-                            <input type="text" name="last-name" id="last-name" placeholder="Seu sobrenome">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" name="email" id="email" placeholder="Seu e-mail">
-                        </div>
-
-                        <div class="form-group full-width">
-                            <label for="message">Mensagem</label>
-                            <textarea name="message" id="message" cols="30" rows="10"
-                                placeholder="Escreva sua mensagem aqui"></textarea>
-                        </div>
-
-                        <div class="form-group full-width">
-                            <button type="submit">Envie sua Mensagem</button>
-                        </div>
-                </fieldset>
-            </div>
-        </div>
-    </section> -->
-
-
+    <!-- FOOTER -->
     <footer id="footer" class="footer white-bg">
         <p><a rel="nofollow" target="_blank" href="https://beacons.page/otaviomiranda">Feito com <span
                     class="heart">❤</span> por Caroline Alexandre</a></p>

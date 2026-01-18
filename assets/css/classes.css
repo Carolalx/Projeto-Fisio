@@ -1,24 +1,37 @@
-/* Variáveis de exemplo (ajuste conforme seu projeto) */
+/* ===========================
+   VARIÁVEIS GLOBAIS
+   =========================== */
 :root {
     --white-color: #FFFFFF;
     --primary-color: #0A1128;
     --gap: 3rem;
 }
 
+/* ===========================
+   RESET E ESTILOS BASE
+   =========================== */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* ===========================
+   BACKGROUNDS
+   =========================== */
 .main-bg {
     background-image: url('../img/main-bg.jpg');
-    /* 'cover' faz a imagem preencher toda a seção, acompanhando o crescimento do texto */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-
-    /* Garante que a seção tenha no mínimo a altura da tela, 
-       mas cresça (auto) se o conteúdo for maior */
     min-height: 100vh;
-    height: auto;
-    width: 100%;
-
-    /* Centraliza o conteúdo verticalmente */
     display: flex;
     align-items: center;
 }
@@ -28,41 +41,143 @@
     color: var(--primary-color);
 }
 
+/* ===========================
+   CONTEÚDO PRINCIPAL
+   =========================== */
 .main-content {
     max-width: 120rem;
     margin: 0 auto;
     padding: 10rem var(--gap);
-    /* Garante que o conteúdo interno flua corretamente */
     width: 100%;
 }
 
 .section {
-    /* Removido height fixo para permitir que o texto dite a altura */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.menu-spacing {
-    height: 65px;
-}
-
-/* Utilitário para largura total */
-.full-width {
+/* ===========================
+   HEADER FIXO
+   =========================== */
+/* HEADER FIXO - desktop + mobile */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    flex: 1 1 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 9999;
+    /* abaixo do menu flutuante */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* AJUSTE PARA TELAS MENORES (Responsividade) */
-@media (max-width: 768px) {
-    .main-content {
-        padding: 5rem 2rem;
-        /* Diminui o respiro em telas pequenas */
+.header-fixed .logo-img {
+    flex-shrink: 0;
+    display: block;
+    /* garante visibilidade */
+}
+
+.header-fixed .logo-img img {
+    width: 40px;
+    height: auto;
+    display: block;
+}
+
+
+.header-fixed h1 {
+    font-size: 1rem;
+    margin-left: 0.75rem;
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+
+    /* Menu flutuante sobre o conteúdo */
+    .menu {
+        position: fixed;
+        /* flutua sobre o conteúdo */
+        top: 0;
+        left: -250px;
+        /* escondido inicialmente */
+        width: 220px;
+        height: 100%;
+        padding-top: 60px;
+        /* espaço para header */
+        flex-direction: column;
+        background-color: var(--white-color);
+        z-index: 10000;
+        /* acima do header */
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        transition: left 0.3s ease;
+        overflow-y: auto;
     }
 
-    .main-bg {
-        /* Em celulares, o topo da imagem costuma ser mais importante */
-        background-position: center top;
+    /* Quando o menu é aberto pelo checkbox */
+    #close-menu:checked~.menu {
+        left: 0;
     }
+
+    .menu nav ul {
+        flex-direction: column;
+        /* links empilhados verticalmente */
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu nav ul li {
+        margin: 1rem 0;
+    }
+
+    .menu nav ul li a {
+        font-size: 0.95rem;
+        padding: 0.5rem 1rem;
+        display: block;
+    }
+}
+
+
+
+/* ===========================
+   GRID E SEÇÕES
+   =========================== */
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.grid-one-content article {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+.footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* ===========================
+   BOTÃO VOLTAR AO TOPO
+   =========================== */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 0.5rem 0.75rem;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.25rem;
+    z-index: 9999;
 }
