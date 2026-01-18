@@ -1,13 +1,27 @@
-.main-bg {
-    background-image: url('../img/main-bg.jpg');
-    background-size: contain;
-    /* A imagem inteira fica visível */
-    background-position: center center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
+/* Variáveis de exemplo (ajuste conforme seu projeto) */
+:root {
+    --white-color: #FFFFFF;
+    --primary-color: #0A1128;
+    --gap: 3rem;
 }
 
+.main-bg {
+    background-image: url('../img/main-bg.jpg');
+    /* 'cover' faz a imagem preencher toda a seção, acompanhando o crescimento do texto */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 
+    /* Garante que a seção tenha no mínimo a altura da tela, 
+       mas cresça (auto) se o conteúdo for maior */
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+
+    /* Centraliza o conteúdo verticalmente */
+    display: flex;
+    align-items: center;
+}
 
 .white-bg {
     background: var(--white-color);
@@ -18,17 +32,37 @@
     max-width: 120rem;
     margin: 0 auto;
     padding: 10rem var(--gap);
+    /* Garante que o conteúdo interno flua corretamente */
+    width: 100%;
 }
 
 .section {
+    /* Removido height fixo para permitir que o texto dite a altura */
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .menu-spacing {
     height: 65px;
 }
 
-body .full-width {
+/* Utilitário para largura total */
+.full-width {
     width: 100%;
     flex: 1 1 100%;
+}
+
+/* AJUSTE PARA TELAS MENORES (Responsividade) */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 5rem 2rem;
+        /* Diminui o respiro em telas pequenas */
+    }
+
+    .main-bg {
+        /* Em celulares, o topo da imagem costuma ser mais importante */
+        background-position: center top;
+    }
 }
