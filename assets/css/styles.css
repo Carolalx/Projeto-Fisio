@@ -1,45 +1,104 @@
+:root {
+    --white-color: #FFFFFF;
+    --primary-color: #0A1128;
+    --secondary-color: #FF6B6B;
+    --light-gray-color: #ccc;
+    --gap: 3rem;
+}
+
+/* ================= GLOBAL ================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 400;
+}
+
+p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ================= SEÇÕES ================= */
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-content {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 10rem var(--gap);
+    width: 100%;
+}
+
+/* Intro */
 .intro-content {
-    position: relative;
-    /* top: -8rem; */
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: var(--gap);
     min-height: 100vh;
+    position: relative;
 }
 
 .intro-text-content,
 .intro-img {
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     justify-content: center;
 }
 
-.intro-img img,
-.intro-img jpg {
-    max-width: 100%;
-    height: auto;
+.intro-img img {
     width: 100%;
+    height: auto;
 }
 
+/* Logo */
 .logo-img img {
     width: 70px;
     height: auto;
 }
 
-
+/* Top3 content */
 .top3-content {
     max-width: 64rem;
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
     justify-content: center;
     min-height: 100vh;
     text-align: center;
 }
 
+/* Grid One Content */
 .grid-one-content {
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     justify-content: center;
     min-height: 100vh;
 }
@@ -52,6 +111,7 @@
     padding-bottom: 5rem;
 }
 
+/* Grids */
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -77,6 +137,7 @@
     transform: rotate(5deg);
 }
 
+/* Gallery */
 .gallery-img {
     width: 100%;
     max-width: 36rem;
@@ -92,6 +153,7 @@
     transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
 }
 
+/* Formulários */
 .contact-form {
     grid-column: span 2;
 }
@@ -125,7 +187,7 @@
     background: var(--white-color);
     padding: 1.5rem 2rem;
     width: 100%;
-    font-size: 3rem;
+    font-size: 1.6rem;
     outline: none;
 }
 
@@ -139,7 +201,7 @@
     background: none;
     color: var(--white-color);
     padding: 1.5rem 2rem;
-    font-size: 3rem;
+    font-size: 1.6rem;
     cursor: pointer;
     transition: all 300ms ease-in-out;
 }
@@ -153,7 +215,30 @@
     color: var(--light-gray-color);
 }
 
+/* ===================== WHATS APP FLOAT ===================== */
+.whats-float {
+    position: fixed;
+    border-color: #0A1128;
+    bottom: 1.6%;
+    right: 8rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 9999;
+}
+
+.whats-icon {
+    width: 48px;
+    height: 48px;
+}
+
+/* Footer */
 .footer {
+    display: flex;
     text-align: center;
     font-size: 1.6rem;
 }
@@ -171,10 +256,7 @@
     padding: 3rem;
 }
 
-.close-menu {
-    display: none;
-}
-
+/* ================= BACK TO TOP ================= */
 .back-to-top {
     position: fixed;
     bottom: 2rem;
@@ -189,134 +271,111 @@
     color: var(--primary-color);
     transform: rotate(-90deg);
     border: 0.1rem solid var(--primary-color);
+    z-index: 9999;
 }
 
-@media (max-width: 800px) {
+/* ================= LOGOS ================= */
+.logo-img img {
+    width: 70px;
+    height: auto;
+}
 
-    .intro-content,
+/* ================= TITULOS ================= */
+h1 {
+    font-size: 2.3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h4 {
+    font-size: 1.6rem;
+}
+
+h5 {
+    font-size: 1.4rem;
+}
+
+h6 {
+    font-size: 1.2rem;
+}
+
+/* ================= MEDIA QUERIES ================= */
+@media (max-width: 1024px) {
+    .intro-content {
+        grid-template-columns: 1fr;
+    }
+
     .grid {
         grid-template-columns: 1fr;
     }
 
     .gallery-img {
-        width: 100%;
         max-width: 100%;
         max-height: 100%;
-    }
-
-    .gallery-img img {
-        width: 100%;
     }
 
     .grid-one-content {
         display: block;
     }
+}
 
-    /* ===========================
-   MENU - BASE (desktop)
-   =========================== */
-    /* MENU DESKTOP */
+/* ================= MENU MOBILE ================= */
+@media (max-width: 767px) {
     .menu {
-        position: relative;
-        /* dentro do fluxo do documento */
-        width: 100%;
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 220px;
+        height: 100%;
+        padding-top: 60px;
+        flex-direction: column;
         background-color: var(--white-color);
-        z-index: 10;
-        /* fica atrás do header se necessário */
-        display: block;
-        /* menu sempre visível no desktop */
-        padding: 0;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+    }
+
+    #close-menu:checked~.menu {
+        left: 0;
     }
 
     .menu nav ul {
-        display: flex;
-        /* horizontal no desktop */
-        list-style: none;
-        padding: 0;
-        margin: 0;
+        flex-direction: column;
     }
 
     .menu nav ul li {
-        margin-right: 2rem;
-        /* espaçamento horizontal */
+        margin: 1rem 0;
     }
 
     .menu nav ul li a {
-        text-decoration: none;
-        color: var(--primary-color);
-        font-weight: 700;
-        font-size: 1rem;
+        font-size: 2rem;
+        padding: 0.5rem 1rem;
     }
-
-
-    /* ===========================
-   MENU MOBILE
-   =========================== */
-    @media (max-width: 767px) {
-
-        /* Menu flutuante */
-        .menu {
-            position: fixed;
-            /* flutua sobre o conteúdo */
-            top: 0;
-            left: -250px;
-            /* escondido por padrão */
-            width: 220px;
-            height: 100%;
-            padding-top: 60px;
-            /* espaço para header */
-            flex-direction: column;
-            background-color: var(--white-color);
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 9999;
-            transition: left 0.3s ease;
-            overflow-y: auto;
-        }
-
-        /* Checkbox controla abertura */
-        #close-menu:checked~.menu {
-            left: 0;
-        }
-
-        /* Menu vertical */
-        .menu nav ul {
-            flex-direction: column;
-        }
-
-        .menu nav ul li {
-            margin: 1rem 0;
-        }
-
-        .menu nav ul li a {
-            font-size: 0.95rem;
-            padding: 0.5rem 1rem;
-        }
-    }
-
-
 
     .close-menu-label::after {
         content: '☰';
         position: fixed;
-        z-index: 2;
         top: 2rem;
         right: 2rem;
         background: var(--primary-color);
-        color: var(--white-color);
+        color: white;
         font-size: 3rem;
-        line-height: 3rem;
         width: 3rem;
         height: 3rem;
         text-align: center;
-        padding: 0.5rem;
+        line-height: 3rem;
         cursor: pointer;
+        z-index: 10001;
     }
 
-    .close-menu:checked~.menu {
-        display: block;
-    }
-
-    .close-menu:checked~.close-menu-label::after {
+    #close-menu:checked~.close-menu-label::after {
         content: '×';
     }
 
@@ -324,27 +383,29 @@
         display: none;
     }
 
+    /* Reduzindo tamanho de títulos */
     h1 {
-        font-size: 4rem;
-    }
-
-    h2 {
-        font-size: 3.6rem;
-    }
-
-    h3 {
-        font-size: 3.4rem;
-    }
-
-    h4 {
-        font-size: 3.2rem;
-    }
-
-    h5 {
         font-size: 3rem;
     }
 
-    h6 {
-        font-size: 2.8rem;
+    h2 {
+        font-size: 2rem;
     }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.4rem;
+    }
+
+    h5 {
+        font-size: 1.2rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+
 }

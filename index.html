@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bárbara F. Fisioterapia</title>
+    <title>Bárbara F. - Fisio</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
@@ -14,57 +14,50 @@
     <link rel="stylesheet" href="assets/css/classes.css">
     <link rel="stylesheet" href="assets/css/menu.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-
-    <link rel="mask-icon" type="image/x-icon" href="assets/img/logo.jpg" color="#111">
 </head>
 
 <body>
-    <!-- CHECKBOX PARA MENU MOBILE -->
-    <input type="checkbox" id="close-menu" class="close-menu">
 
-    <!-- BOTÃO HAMBURGER -->
-    <label class="close-menu-label" for="close-menu" title="Menu"></label>
-
-    <!-- MENU LATERAL / TOP -->
-    <aside class="menu white-bg">
-        <div class="header-fixed">
-            <div class="logo-img">
-                <img src="assets/img/logo.jpg" alt="Logo pessoal.">
-            </div>
-            <h1 onclick="document.getElementById('close-menu').checked=false;">
-                <a href="#home">Bárbara F.</a>
-            </h1>
+    <!-- ================= HEADER FIXO ================= -->
+    <div class="header-fixed">
+        <div class="logo-img">
+            <img src="assets/img/logo.jpg" alt="Logo pessoal.">
         </div>
+        <h1>Bárbara F.</h1>
+    </div>
 
+    <!-- ================= MENU ================= -->
+    <input type="checkbox" id="close-menu" class="close-menu">
+    <label class="close-menu-label" for="close-menu"></label>
+
+    <aside class="menu white-bg">
         <nav>
-            <ul onclick="document.getElementById('close-menu').checked=false;">
-                <li><a href="#intro">Especialidade</a></li>
-                <li><a href="#grid-one">Outras especialidades</a></li>
-                <li><a href="#gallery">Galeria de imagens</a></li>
-                <li><a href="#grid-two">Mais sobre</a></li>
+            <ul>
+                <li><a href="#intro" onclick="closeMenu()">Especialidade</a></li>
+                <li><a href="#grid-one" onclick="closeMenu()">Outras especialidades</a></li>
+                <li><a href="#gallery" onclick="closeMenu()">Galeria de imagens</a></li>
+                <li><a href="#grid-two" onclick="closeMenu()">Detalhes</a></li>
             </ul>
         </nav>
     </aside>
 
     <div class="menu-spacing"></div>
 
-    <!-- INÍCIO DAS SEÇÕES -->
+    <!-- ================= SEÇÃO INTRO ================= -->
     <section id="home" class="intro main-bg section">
         <div class="main-content intro-content">
             <div class="intro-text-content">
-                <h6>SOBRE</h6>
+                <h1>SOBRE</h1>
                 <p>Minha atuação como fisioterapeuta é focada, principalmente, na saúde respiratória dos bebês,
                     mas minha formação me permite cuidar do desenvolvimento integral das crianças em diversas outras
                     frentes.</p>
 
-                <p> Eu me especializei no tratamento de doenças respiratórias em crianças pequenas. Utilizo abordagens
+                <p>Eu me especializei no tratamento de doenças respiratórias em crianças pequenas. Utilizo abordagens
                     específicas, muitas vezes lúdicas, para prevenir e tratar quadros comuns como bronquiolite, asma e
-                    pneumonia.
-                    Meu objetivo nesta área é ajudar na desobstrução das vias aéreas, facilitar a eliminação de
-                    secreções, melhorar a oxigenação e aliviar o desconforto respiratório do bebê. Para isso, aplico
+                    pneumonia. Meu objetivo nesta área é ajudar na desobstrução das vias aéreas, facilitar a eliminação
+                    de secreções, melhorar a oxigenação e aliviar o desconforto respiratório do bebê. Para isso, aplico
                     manobras manuais delicadas e, se necessário, utilizo equipamentos de apoio para garantir que o
-                    pequeno paciente respire melhor e se recupere mais rapidamente.
-                </p>
+                    pequeno paciente respire melhor e se recupere mais rapidamente.</p>
             </div>
             <div class="intro-img">
                 <img src="assets/img/fisio1.jpg" alt="Logo de Fisio.">
@@ -72,6 +65,7 @@
         </div>
     </section>
 
+    <!-- ================= SEÇÃO FISIOTERAPIA ================= -->
     <section id="intro" class="white-bg section">
         <div class="main-content top3-content">
             <h2>FISIOTERAPIA RESPIRATÓRIA PARA BEBÊ</h2>
@@ -90,96 +84,92 @@
                 - Fortalecer a musculatura respiratória<br>
                 - Melhorar a expansão pulmonar<br>
                 - Acelerar a recuperação
-
             </p>
         </div>
     </section>
 
+    <!-- ================= SEÇÃO OUTRAS ESPECIALIDADES ================= -->
     <section id="grid-one" class="grid-one main-bg section">
         <div class="main-content grid-one-content">
-            <h2 class="grid-main-heading">Outros atendimentos
-                <p class="grid-description">Demais especialidades</p>
-                <div class="grid">
-                    <article>
-                        <h3>Fisioterapia Respiratória</h3>
-                        <p></p>
-                    </article>
-                    <article>
-                        <h3>Acumpuntura</h3>
-                        <p></p>
-                    </article>
-                    <article>
-                        <h3>Fisioterapia Ortopédica</h3>
-                        <p></p>
-                    </article>
-                </div>
-        </div>
-    </section>
-
-    <section id="gallery" class="grid-one white-bg section">
-        <div class="main-content grid-one-content">
-            <h2 class="grid-main-heading">Galeria</h2>
-            <p class="grid-description"></p>
-
-            <div class="grid">
-                <div class="gallery-img">
-                    <img src="#" alt="" />
-                </div>
-                <div class="gallery-img">
-                    <img src="assets/img/DraBarAle.jpg" alt="Dra. Bárbara" />
-                </div>
-                <div class="gallery-img">
-                    <img src="#" alt="" />
-                </div>
-                <div class="gallery-img">
-                    <img src="assets/img/respbebe.jpg" alt="Fisioterapia Respiratória para Bebê" />
-                </div>
-                <div class="gallery-img">
-                    <img src="assets/img/acumpuntura.jpg" alt="Acumpuntura" />
-                </div>
-                <div class="gallery-img">
-                    <img src="assets/img/fisioMotora.jpg" alt="Fisioterapia Motora" />
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="grid-two" class="grid-one main-bg section">
-        <div class="main-content grid-one-content">
-            <h2 class="grid-main-heading"></h2>
-            <p class="grid-description">Mais sobre as atividades</p>
-
+            <h2 class="grid-main-heading">
+                <p class="grid-description">Outras especialidades</p>
+            </h2>
             <div class="grid">
                 <article>
-                    <h3>Reabilitação Pulmonar</h3>
-                    <p>Os Programas de Reabilitação Pulmonar têm sido empregados com resultados
-                        muito satisfatórios e com níveis de evidências científicas de excelência.
-                        O programa apresenta resultados favoráveis para fortalecimento muscular,
-                        aumento da tolerância ao exercício e diminuição e controle da falta de ar.</p>
+                    <h3>Fisioterapia Respiratória</h3>
+                </article>
+                <article>
+                    <h3>Acupuntura</h3>
                 </article>
                 <article>
                     <h3>Fisioterapia Ortopédica</h3>
-                    <p> Profissional altamente habilitada fará a consulta inicial, com identificação da lesão.
-                        Na sequência iremos traçar um tratamento individualizado e adequado, podendo minimizar ou
-                        até mesmo oferecer a cura completa dos sintomas.</p>
-                </article>
-                <article>
-                    <h3>Terapia Manual</h3>
-                    <p>Terapia manual, abrange o tratamento de saúde de várias doenças, com a intervenção física.
-                        É um termo genérico utilizado para designar um conjunto de técnicas terapêuticas utilizadas
-                        pelo fisioterapeuta para prevenir e tratar as mais variadas disfunções.</p>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ================= GALERIA ================= -->
+    <section id="gallery" class="grid-one white-bg section">
+        <div class="main-content grid-one-content">
+            <h2 class="grid-main-heading">Galeria</h2>
+            <div class="grid">
+                <div class="gallery-img"><img src="#" alt="" /></div>
+                <div class="gallery-img"><img src="assets/img/DraBarAle.jpg" alt="Dra. Bárbara" /></div>
+                <div class="gallery-img"><img src="#" alt="" /></div>
+                <div class="gallery-img"><img src="assets/img/respbebe.jpg" alt="Fisioterapia Respiratória para Bebê" />
+                </div>
+                <div class="gallery-img"><img src="assets/img/acumpuntura.jpg" alt="Acupuntura" /></div>
+                <div class="gallery-img"><img src="assets/img/fisioMotora.jpg" alt="Fisioterapia Motora" /></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= MAIS DETALHES ================= -->
+    <section id="grid-two" class="grid-one main-bg section">
+        <div class="main-content grid-one-content">
+            <h2 class="grid-main-heading"></h2>
+            <h2 class="grid-description">Mais sobre as atividades</h2>
+            <div class="grid">
+                <article>
+                    <h3>Reabilitação Pulmonar</h3>
+                    <p>Programas de Reabilitação Pulmonar com resultados satisfatórios e evidências científicas de
+                        excelência.</p>
+                </article>
+                <article>
+                    <h3>Fisioterapia Ortopédica</h3>
+                    <p>Profissional habilitada realiza consulta inicial e define tratamento individualizado.</p>
+                </article>
+                <article>
+                    <h3>Terapia Manual</h3>
+                    <p>Conjunto de técnicas terapêuticas aplicadas pelo fisioterapeuta para prevenir e tratar
+                        disfunções.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <div class="whats-float">
+        <a href="https://wa.me/5541920043891?text=Olá, quero informações!">
+            <img src="assets/img/icnwhats.png">
+        </a>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
     <footer id="footer" class="footer white-bg">
-        <p><a rel="nofollow" target="_blank" href="https://beacons.page/otaviomiranda">Feito com <span
-                    class="heart">❤</span> por Caroline Alexandre</a></p>
+        <p><a rel="nofollow" target="_blank" href="https://github.com/Carolalx">
+                Feito com <span class="heart">❤</span> por Carol A.</a></p>
     </footer>
 
+    <!-- ================= BACK TO TOP ================= -->
     <a class="back-to-top" href="#">➤</a>
+
+    <!-- ================= SCRIPT MENU ================= -->
+    <script>
+        function closeMenu() {
+            document.getElementById('close-menu').checked = false;
+        }
+    </script>
+
 </body>
 
 </html>

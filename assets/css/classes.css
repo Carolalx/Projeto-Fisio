@@ -29,7 +29,7 @@ p {
 .main-bg {
     background-image: url('../img/main-bg.jpg');
     background-size: cover;
-    background-position: center center;
+    background-position: 50% 5%;
     background-repeat: no-repeat;
     min-height: 100vh;
     display: flex;
@@ -45,10 +45,10 @@ p {
    CONTEÚDO PRINCIPAL
    =========================== */
 .main-content {
-    max-width: 120rem;
+    max-width: 50rem;
     margin: 0 auto;
-    padding: 10rem var(--gap);
-    width: 100%;
+    padding: 5rem var(--gap);
+    width: 50%;
 }
 
 .section {
@@ -161,6 +161,7 @@ p {
    FOOTER
    =========================== */
 .footer {
+    display: flex;
     text-align: center;
     padding: 2rem 1rem;
     font-size: 0.9rem;
