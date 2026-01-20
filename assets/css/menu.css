@@ -40,22 +40,22 @@
 .menu nav ul li a {
     text-decoration: none;
     color: var(--primary-color);
-    padding: 0.5rem 1rem;
+    padding: 2rem;
     display: block;
     font-family: Montserrat, sans-serif;
     font-size: 2rem;
     font-weight: 700;
-    position: center;
+    position: relative;
 }
 
 .menu nav ul li a::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 50%;
+    bottom: 1rem;
+    left: 25%;
     width: 0;
-    height: 2px;
-    background: var(--secondary-color);
+    height: 0.2rem;
+    background: crimson;
     transition: all 300ms ease-in-out;
 }
 
